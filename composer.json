@@ -1,5 +1,32 @@
 {
+    "name": "gemfourmedia/wn-gcontent-plugin",
+    "type": "winter-plugin",
+    "description": "Content management for Winter CMS",
+    "homepage": "https://github.com/gemfourmedia/wn-gcontent-plugin",
+    "keywords": ["winter cms", "winter", "plugin", "content", "post"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sang Dang",
+            "email": "sangdang@gemfourmedia.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gemfourmedia/wn-gcontent-plugin/issues",
+        "source": "https://github.com/gemfourmedia/wn-gcontent-plugin"
+    },
     "require": {
+        "php": "^8.0",
+        "composer/installers": "~1.0",
         "caseyamcl/toc": "^3.1"
+    },
+    "extra": {
+        "installer-name": "gcontent"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }
