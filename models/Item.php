@@ -35,7 +35,8 @@ class Item extends Model
 
     public $implement = [
         '@GemFourMedia.GTag.Behaviors.TaggableModel',
-        '@Winter.Translate.Behaviors.TranslatableModel'
+        '@Winter.Translate.Behaviors.TranslatableModel',
+        '@Winter\Search\Behaviors\Searchable'
     ];
 
     /**
@@ -69,6 +70,17 @@ class Item extends Model
         'meta_description',
         'meta_keywords',
         ['slug', 'index' => true]
+    ];
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public $searchable = [
+        'title',
+        'introtext',
+        'content'
     ];
 
     /**

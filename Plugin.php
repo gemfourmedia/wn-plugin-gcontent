@@ -60,4 +60,22 @@ class Plugin extends PluginBase
             ],
         ];
     }
+
+    public function registerSearchHandlers()
+    {
+        
+        return [
+
+            'gContentItemSearch' => [
+                'name' => 'Content Search',
+                'model' => \GemFourMedia\GContent\Models\Item::class,
+                'record' => [
+                    'title' => 'title',
+                    'image' => 'main_image',
+                    'description' => 'introtext',
+                    'url' => 'default_url',
+                ]
+            ]
+        ];
+    }
 }
