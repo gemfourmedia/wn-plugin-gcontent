@@ -4,21 +4,33 @@ use Event;
 use System\Classes\PluginBase;
 
 use GemFourMedia\GContent\Classes\GContentPageExtend;
-use GemFourMedia\GContent\Classes\GContentSearchResultsProvider;
+use GemFourMedia\GContent\Classes\GContentUserExtend;
 
 class Plugin extends PluginBase
 {
 
+    // public $require = ['Winter.User'];
+
     public function boot()
     {
-        Event::listen('offline.sitesearch.extend', function () {
-            return new GContentSearchResultsProvider();
-        });
+        (new GContentUserExtend)->extend();
+    }
+
+    public function pluginDetails()
+    {
+        return [
+            'name' => 'gemfourmedia.gcontent::lang.plugin.name',
+            'description' => 'gemfourmedia.gcontent::lang.plugin.description',
+            'author' => 'GemFourMedia',
+            'icon' => 'oc-icon-adjust',
+            'homepage' => 'https://wintercms.gemfourmedia.com/plugin/gcontent',
+        ];
     }
 
     public function register()
     {
         (new GContentPageExtend)->extend();
+        
     }
 
     public function registerComponents()
