@@ -1,0 +1,33 @@
+columns:
+    id:
+        label: 'gemfourmedia.gcontent::lang.category.fields.id'
+        type: number
+        sortable: true
+    group_id:
+        label: 'gemfourmedia.gcontent::lang.category.fields.group_id'
+        type: text
+        sortable: true
+        select: name
+        relation: group
+    name:
+        label: 'gemfourmedia.gcontent::lang.category.fields.name'
+        type: text
+        searchable: true
+        sortable: true
+    featured:
+        label: 'gemfourmedia.gcontent::lang.category.fields.featured'
+        type: switch
+        sortable: true
+    published:
+        label: 'gemfourmedia.gcontent::lang.category.fields.published'
+        type: switch
+        sortable: true
+    created_at:
+        label: 'gemfourmedia.gcontent::lang.category.fields.created_at'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'gemfourmedia.gcontent::lang.category.fields.updated_at'
+        type: datetime
+        invisible: true
+        sortable: true

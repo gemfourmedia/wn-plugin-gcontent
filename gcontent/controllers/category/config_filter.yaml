@@ -1,0 +1,16 @@
+scopes:
+    group:
+        label: Content Group
+        modelClass: GemFourMedia\GContent\Models\Group
+        conditions: group_id in (:filtered)
+        nameFrom: name
+    published:
+        label: Only published
+        type: checkbox
+        default: 0
+        conditions: published <> false
+    featured:
+        label: Only featured
+        type: checkbox
+        default: 0
+        conditions: featured <> false

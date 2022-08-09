@@ -1,0 +1,170 @@
+fields:
+    title:
+        label: 'gemfourmedia.gcontent::lang.item.fields.title'
+        span: auto
+        type: text
+    slug:
+        label: 'gemfourmedia.gcontent::lang.item.fields.slug'
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+tabs:
+    fields:
+        introtext:
+            label: 'gemfourmedia.gcontent::lang.item.fields.introtext'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.content'
+        content:
+            label: 'gemfourmedia.gcontent::lang.item.fields.content'
+            size: huge
+            span: full
+            type: richeditor
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.content'
+        extras:
+            label: Extra Content Blocks
+            span: full
+            type: partial
+            path: $/gemfourmedia/gcontent/controllers/item/_relation_extras.htm
+            tab: 'Extra Info'
+        images:
+            label: 'gemfourmedia.gcontent::lang.item.fields.images'
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.files'
+        attachments:
+            label: 'gemfourmedia.gcontent::lang.item.fields.attachments'
+            mode: file
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.files'
+        embeds:
+            label: 'gemfourmedia.gcontent::lang.item.fields.embeds'
+            prompt: 'Add new item'
+            style: default
+            span: full
+            type: repeater
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.files'
+            form:
+                fields:
+                    title:
+                        label: 'gemfourmedia.gcontent::lang.item.fields.embeds_title'
+                        span: full
+                        type: text
+                    code:
+                        label: 'gemfourmedia.gcontent::lang.item.fields.embeds_code'
+                        size: small
+                        language: html
+                        span: full
+                        type: codeeditor
+        relatedItems:
+            label: 'gemfourmedia.gcontent::lang.item.fields.related_items'
+            nameFrom: name
+            descriptionFrom: introtext
+            span: full
+            type: partial
+            path: $/gemfourmedia/gcontent/controllers/item/_relation_relatedItems.htm
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.related_items'
+        meta_title:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_title'
+            span: auto
+            type: text
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+        meta_description:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_description'
+            size: ''
+            span: left
+            type: textarea
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+        meta_keywords:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_keywords'
+            span: left
+            type: text
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+secondaryTabs:
+    fields:
+        featured:
+            label: 'gemfourmedia.gcontent::lang.item.fields.featured'
+            span: auto
+            type: checkbox
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        pinned:
+            label: 'gemfourmedia.gcontent::lang.item.fields.pinned'
+            span: auto
+            type: checkbox
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        published:
+            label: 'gemfourmedia.gcontent::lang.item.fields.published'
+            span: full
+            type: switch
+            default: true
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        published_at:
+            label: 'gemfourmedia.gcontent::lang.item.fields.published_at'
+            mode: datetime
+            span: full
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+            type: datepicker
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        serie:
+            label: 'gemfourmedia.gcontent::lang.item.fields.serie_id'
+            nameFrom: name
+            descriptionFrom: description
+            emptyOption: None
+            span: full
+            type: relation
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        group:
+            label: 'gemfourmedia.gcontent::lang.item.fields.group_id'
+            nameFrom: name
+            descriptionFrom: description
+            emptyOption: None
+            span: full
+            type: relation
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        category:
+            label: 'gemfourmedia.gcontent::lang.item.fields.category_id'
+            nameFrom: name
+            descriptionFrom: description
+            emptyOption: None
+            span: full
+            type: relation
+            scope: filterByContentGroup
+            dependsOn: group
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        categories:
+            label: 'gemfourmedia.gcontent::lang.item.fields.categories'
+            nameFrom: name
+            descriptionFrom: description
+            span: full
+            type: relation
+            scope: filterByMainCat
+            dependsOn:
+                - group
+                - category
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
+        author:
+            label: 'gemfourmedia.gcontent::lang.item.fields.user_id'
+            nameFrom: name
+            descriptionFrom: description
+            emptyOption: None
+            span: full
+            type: relation
+            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'

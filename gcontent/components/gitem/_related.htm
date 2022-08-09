@@ -1,0 +1,16 @@
+{% if items|length > 0 %}
+<div class="gItem__related gwidget">
+	<div class="gwidget__header">
+		<h3 class="related__title gwidget__title">{{'Bài viết liên quan'|_}}</h3>
+	</div>
+	<div class="related__body gwidget__body">
+		<div class="row">
+			{% for item in items %}
+			<div class="col-6 col-md-4 col-lg-3">
+				{% partial __SELF__~"::_single" item=item %}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}

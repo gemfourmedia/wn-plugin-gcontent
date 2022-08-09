@@ -1,0 +1,13 @@
+{% set items = __SELF__.items %}
+
+{% if items|length > 0 %}
+<div class="gItems" id="{{__SELF__}}">
+	<div class="gItems__body" id="gItems__{{__SELF__}}">
+		{% partial __SELF__~'::_list' items=items %}
+	</div>
+</div>
+<div class="gItems__pagination">
+	{% partial __SELF__~'::_pagination_ajax' items=items partial=__SELF__~'::_list' updateArea='@#gItems__'~__SELF__ %}
+</div>
+
+{% endif %}

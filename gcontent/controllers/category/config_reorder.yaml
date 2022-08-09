@@ -1,0 +1,4 @@
+title: Category
+modelClass: GemFourMedia\GContent\Models\Category
+toolbar:
+    buttons: reorder_toolbar

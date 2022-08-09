@@ -1,0 +1,75 @@
+columns:
+    id:
+        label: gemfourmedia.gcontent::lang.item.fields.id
+        type: number
+        sortable: true
+    main_image_url:
+        label: gemfourmedia.gcontent::lang.item.fields.main_image
+        type: image
+        imageWidth: 80
+        imageHeight: 80
+        sortable: false
+        searchable: false
+    title:
+        label: gemfourmedia.gcontent::lang.item.fields.title
+        type: text
+        searchable: true
+        sortable: true
+    published:
+        label: gemfourmedia.gcontent::lang.item.fields.published
+        type: switch
+        sortable: true
+    featured:
+        label: gemfourmedia.gcontent::lang.item.fields.featured
+        type: switch
+        sortable: true
+    pinned:
+        label: gemfourmedia.gcontent::lang.item.fields.pinned
+        type: switch
+        sortable: true
+    sort_order:
+        label: gemfourmedia.gcontent::lang.item.fields.sort_order
+        type: number
+        sortable: true
+    hit:
+        label: gemfourmedia.gcontent::lang.item.fields.hit
+        type: number
+        sortable: true
+    group_id:
+        label: gemfourmedia.gcontent::lang.item.fields.group_id
+        type: text
+        select: name
+        relation: group
+        sortable: true
+    category_id:
+        label: gemfourmedia.gcontent::lang.item.fields.category_id
+        type: text
+        select: name
+        relation: category
+        sortable: true
+    serie_id:
+        label: gemfourmedia.gcontent::lang.item.fields.serie_id
+        type: text
+        select: name
+        relation: serie
+        sortable: true
+    user_id:
+        label: gemfourmedia.gcontent::lang.item.fields.user_id
+        type: text
+        select: name
+        relation: author
+        sortable: true
+    published_at:
+        label: gemfourmedia.gcontent::lang.item.fields.published_at
+        type: timetense
+        sortable: true
+    created_at:
+        label: gemfourmedia.gcontent::lang.item.fields.created_at
+        type: timetense
+        invisible: true
+        sortable: true
+    updated_at:
+        label: gemfourmedia.gcontent::lang.item.fields.updated_at
+        type: timesince
+        invisible: true
+        sortable: true

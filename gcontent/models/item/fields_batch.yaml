@@ -1,0 +1,93 @@
+fields:
+    mark_featured:
+        label: 'Mark Featured Items'
+        span: auto
+        type: radio
+        default: 'none'
+        options:
+            'none' : 'None'
+            '0' : 'Unmark'
+            '1' : 'Mark'
+    mark_pinned:
+        label: 'Mark Pinned Items'
+        span: auto
+        type: radio
+        default: 'none'
+        options:
+            'none' : 'None'
+            '0' : 'Unmark'
+            '1' : 'Mark'
+    mark_published:
+        label: 'Mark Published Items'
+        span: auto
+        type: radio
+        default: 'none'
+        options:
+            'none' : 'None'
+            '0' : 'Unmark'
+            '1' : 'Mark'
+    section_assign:
+        label: 'Assign'
+        type: section
+    enable_batch_contentgroup:
+        label: 'Assign to content group'
+        span: auto
+        type: checkbox
+    group:
+        label: 'Select Content Group'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: None
+        span: full
+        type: relation
+        trigger:
+            action: show
+            field: enable_batch_contentgroup
+            condition: checked
+    enable_batch_category:
+        label: 'Assign to Category'
+        span: auto
+        type: checkbox
+    category:
+        label: 'Select Category'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: None
+        span: full
+        type: relation
+        trigger:
+            action: show
+            field: enable_batch_category
+            condition: checked
+    enable_batch_categories:
+        label: 'Assign to Categories'
+        span: auto
+        type: checkbox
+        hidden: true
+    categories:
+        label: 'Select Categories'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: None
+        span: full
+        type: relation
+        hidden: true
+        trigger:
+            action: show
+            field: enable_batch_categories
+            condition: checked
+    enable_batch_serie:
+        label: 'Assign to Serie'
+        span: auto
+        type: checkbox
+    serie:
+        label: 'Select Serie'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: None
+        span: full
+        type: relation
+        trigger:
+            action: show
+            field: enable_batch_serie
+            condition: checked

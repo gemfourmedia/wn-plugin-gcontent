@@ -1,0 +1,14 @@
+list: $/gemfourmedia/gcontent/models/category/columns.yaml
+modelClass: GemFourMedia\GContent\Models\Category
+title: Category
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'gemfourmedia/gcontent/category/update/:id'
+showTree: 1
+filter: config_filter.yaml

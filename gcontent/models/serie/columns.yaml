@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.id'
+        type: number
+        sortable: true
+    name:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.name'
+        type: text
+        searchable: true
+        sortable: true
+    featured:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.featured'
+        type: switch
+        sortable: true
+    created_at:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.created_at'
+        type: timetense
+        sortable: true
+    updated_at:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.updated_at'
+        type: timesince
+        invisible: true
+        sortable: true

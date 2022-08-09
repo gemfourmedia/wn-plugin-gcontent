@@ -1,0 +1,10 @@
+name: Item
+form: $/gemfourmedia/gcontent/models/item/fields.yaml
+modelClass: GemFourMedia\GContent\Models\Item
+defaultRedirect: gemfourmedia/gcontent/item
+create:
+    redirect: 'gemfourmedia/gcontent/item/update/:id'
+    redirectClose: gemfourmedia/gcontent/item
+update:
+    redirect: gemfourmedia/gcontent/item
+    redirectClose: gemfourmedia/gcontent/item

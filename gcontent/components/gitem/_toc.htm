@@ -1,0 +1,19 @@
+{% if toc %}
+<div class="gItem__toc gwidget">
+	<div class="gwidget__header">
+		<h4 class="gwidget__title">
+			{{'Mục lục'|_}}
+		</h4>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#item_toc_collapse" aria-controls="item_toc_collapse" aria-expanded="true" aria-label="Toggle navigation">
+		    <span class="bi-list"></span>
+		</button>
+	</div>
+	<div class="gwidget__body">
+		<div class="collapse navbar-collapse show" id="item_toc_collapse">
+			<ul>
+				{% partial _SELF__~'::_toc_item' toc=toc isChild=false %}
+			</ul>
+		</div>
+	</div>
+</div>
+{% endif %}

@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+    - builder_table_create_gemfourmedia_gcontent_group.php
+    - builder_table_create_gemfourmedia_gcontent_category.php
+    - builder_table_create_gemfourmedia_gcontent_serie.php
+    - builder_table_create_gemfourmedia_gcontent_item.php
+    - builder_table_create_gemfourmedia_gcontent_items_categories.php
+    - builder_table_create_gemfourmedia_gcontent_item_related.php
+1.0.2:
+    - 'Created table gemfourmedia_gcontent_extras'
+    - builder_table_create_gemfourmedia_gcontent_extras.php

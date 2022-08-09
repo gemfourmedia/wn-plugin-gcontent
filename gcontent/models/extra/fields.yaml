@@ -1,0 +1,53 @@
+fields:
+    code:
+        label: Code
+        span: full
+        readOnly: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    title:
+        label: Title
+        span: full
+        type: text
+    subtitle:
+        label: Subtitle
+        span: full
+        type: text
+    content:
+        label: Content
+        size: ''
+        span: full
+        type: richeditor
+tabs:
+    fields:
+        images:
+            label: Images
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: full
+            type: fileupload
+            tab: Images
+        videos:
+            label: Videos
+            size: small
+            language: php
+            span: full
+            type: codeeditor
+            tab: Video
+        'params[image_position]':
+            label: 'Main Image Position'
+            options:
+                none: Unset
+                first: First
+                last: Last
+            showSearch: true
+            span: auto
+            type: dropdown
+            tab: Setting

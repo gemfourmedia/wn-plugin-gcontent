@@ -1,0 +1,129 @@
+tabs:
+    fields:
+        section_page:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.section_page'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.section_page_desc'
+            span: full
+            type: section
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+        detailPage:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.itemPage'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.itemPage_desc'
+            span: left
+            type: dropdown
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            options: listCmsItemPages
+        listPage:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.categoryPage'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.categoryPage_desc'
+            span: right
+            type: dropdown
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            options: listCmsItemsPages
+        authorPage:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.authorPage'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.authorPage_desc'
+            span: left
+            type: dropdown
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            options: listCmsItemsPages
+        seriePage:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.seriePage'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.seriePage_desc'
+            span: right
+            type: dropdown
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            options: listCmsItemsPages
+        social_links_type:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.social_links_type'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.social_links_type_desc'
+            commentHtml: true
+            span: full
+            type: radio
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.social_links'
+            default: 'builtin'
+            options:
+                builtin: Built-In
+                external: External
+        social_links:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.social_links'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.social_links_desc'
+            span: full
+            type: checkboxlist
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.social_links'
+            trigger:
+                action: show
+                field: social_links_type
+                condition: value[builtin]
+            options:
+                Buffer: Buffer
+                Digg: Digg
+                Email: Email
+                Facebook: Facebook
+                Google: Google
+                LinkedIn: LinkedIn
+                Pinterest: Pinterest
+                Print: Print
+                Reddit: Reddit
+                StumbleUpon: StumbleUpon
+                Tumblr: Tumblr
+                Twitter: Twitter
+                VK: VK
+                Yumly: Yumly
+        social_links_external:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.social_links_external'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.social_links_external_desc'
+            span: full
+            type: codeeditor
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.social_links'
+            trigger:
+                action: show
+                field: social_links_type
+                condition: value[external]
+        dateFormat:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.dateFormat'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.dateFormat_desc'
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            span: left
+            type: radio
+            default: 'F j, Y'
+            options:
+                '': None
+                'F j, Y': 'F j, Y'
+                Y-m-d: Y-m-d
+                m/d/Y: m/d/Y
+                d/m/Y: d/m/Y
+                custom: Custom
+        dateFormatCustom:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.dateFormatCustom'
+            span: right
+            trigger:
+                action: show
+                field: dateFormat
+                condition: 'value[custom]'
+            type: text
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.dateFormatCustom_desc'
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+        timeFormat:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.timeFormat'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.timeFormat_desc'
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            span: left
+            type: radio
+            default: 'g:i A'
+            options:
+                '': None
+                'g:i a': 'g:i a'
+                'g:i A': 'g:i A'
+                'H:i': 'H:i'
+                custom: Custom
+        timeFormatCustom:
+            label: 'gemfourmedia.gcontent::lang.setting.fields.timeFormatCustom'
+            comment: 'gemfourmedia.gcontent::lang.setting.fields.timeFormatCustom_desc'
+            tab: 'gemfourmedia.gcontent::lang.setting.tab.general'
+            span: right
+            type: text
+            trigger:
+                action: show
+                field: timeFormat
+                condition: 'value[custom]'

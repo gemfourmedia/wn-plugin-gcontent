@@ -1,0 +1,27 @@
+<div id="batch-widget-popup" class="batch-widget-popup">
+    <?= Form::ajax('onBatchUpdate',['data-request-confirm'=>'Are you sure?', 'data-request-success'=>'$(".control-popup").modal("hide")']) ?>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="popup">&times;</button>
+            <h4 class="modal-title">Batch Update</h4>
+        </div>
+
+        <div class="recordfinder-list list-flush" style="padding-left:15px;padding-right: 15px;">
+            <?= $batchWidget->render() ?>
+            <input type="hidden" name="itemBatch[selectedItems]" value='<?= $selectedItems ?>' />
+        </div>
+
+        <div class="modal-footer">
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Submit
+            </button>
+            <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="popup">
+                Cancel
+            </button>
+        </div>
+    <?= Form::close() ?>
+</div>

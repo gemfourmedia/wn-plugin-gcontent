@@ -1,0 +1,53 @@
+{% set item = __SELF__.item %}
+
+<div class="section">
+	<div class="row">
+		<div class="col-12 col-lg-8">
+			<article class="gItem" id="gItem-{{__SELF__}}">
+				<div class="gItem__header">
+					<h1 class="gItem__title">{{item.title}}</h1>
+				</div>
+				<div class="gItem__body">
+					{% if item.main_image %}
+					<img src="{{item.main_image.getPath()}}" class="w-100" />
+					{% endif %}
+					{{item.content|raw}}
+
+				</div>
+				<div class="gItem__footer">
+					{% partial __SELF__~'::_gallery' gallery=item.gallery %}
+					{% partial __SELF__~'::_meta' gallery=item.meta %}
+					{% partial __SELF__~'::_nextprev' nextItem=__SELF__.nextItem() prevItem=__SELF__.previousItem() %}
+				</div>
+			</article>
+		</div>
+		<div class="col-12 col-lg-4">
+			{% partial __SELF__~'::_toc' toc=item.toc %}
+			{% partial __SELF__~'::_share' item=item setting=__SELF__.setting %}
+			{% partial __SELF__~'::_tag' tags=__SELF__.tags() %}
+			
+		</div>
+	</div>
+	<hr class="my-3 my-lg-5" />
+	{% partial __SELF__~'::_related' items=__SELF__.relatedItems() %}
+
+	{% partial __SELF__~'::_related' items=__SELF__.similarItems() %}
+
+</div>
+
+{% partial __SELF__~'::_snippet' item=item %}
+
+	
+{% put styles %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+{% endput %}
+
+{% put scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script type="text/javascript">
+	{# Bind fancybox for content image #}
+	Fancybox.bind("#gItem-{{__SELF__}} .gItem__body img", {
+		groupAll: true
+	});
+</script>
+{% endput %}

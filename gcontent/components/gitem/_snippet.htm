@@ -1,0 +1,16 @@
+{% set author = __SELF__.author() %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{{item.title}}",
+  "image": ["{{ item.images.lists('path')| join('","') | raw }}"],
+  "datePublished": "{{item.published_at.toIso8601String()}}",
+  "dateModified": "{{item.updated_at.toIso8601String()}}",
+  "author": [{
+    "@type": "Person",
+    "name": "{{author.name}}",
+    "url": "{{author.url}}"
+  }]
+}
+</script>

@@ -1,0 +1,21 @@
+relatedItems:
+    label: gemfourmedia.gcontent::lang.item.fields.related_items
+    view:
+        list: $/gemfourmedia/gcontent/models/item/columns_relation.yaml
+        toolbarButtons: link|unlink
+        showSearch: true
+    manage:
+        list: $/gemfourmedia/gcontent/models/item/columns_relation.yaml
+        showSearch: true
+extras:
+    label: Extra Content Block
+    view:
+        list: $/gemfourmedia/gcontent/models/extra/columns.yaml
+        showSorting: false
+        defaultSort:
+            column: sort_order
+            direction: asc
+        toolbarButtons: create|remove
+    manage:
+        form: $/gemfourmedia/gcontent/models/extra/fields.yaml
+        recordsPerPage: 10

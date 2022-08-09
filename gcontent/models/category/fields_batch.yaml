@@ -1,0 +1,37 @@
+fields:
+    mark_featured:
+        label: 'Mark Featured Items'
+        span: auto
+        type: radio
+        default: 'none'
+        options:
+            'none' : 'None'
+            '0' : 'Unmark'
+            '1' : 'Mark'
+    mark_published:
+        label: 'Mark Published Items'
+        span: auto
+        type: radio
+        default: 'none'
+        options:
+            'none' : 'None'
+            '0' : 'Unmark'
+            '1' : 'Mark'
+    section_assign:
+        label: 'Assign'
+        type: section
+    enable_batch_contentgroup:
+        label: 'Assign to content group'
+        span: auto
+        type: checkbox
+    group:
+        label: 'Select Content Group'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: None
+        span: full
+        type: relation
+        trigger:
+            action: show
+            field: enable_batch_contentgroup
+            condition: checked

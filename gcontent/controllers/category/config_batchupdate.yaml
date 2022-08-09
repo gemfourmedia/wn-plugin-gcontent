@@ -1,0 +1,4 @@
+title: Category
+modelClass: GemFourMedia\GContent\Models\Category
+batchMethod: batchUpdate
+form: $/gemfourmedia/gcontent/models/category/fields_batch.yaml

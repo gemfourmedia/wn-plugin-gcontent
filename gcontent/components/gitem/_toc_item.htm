@@ -1,0 +1,13 @@
+{% for menu in toc %}
+    <li role="presentation">
+        {% if menu.getUri() %}
+            <a href="{{ menu.getUri() }}">
+                <i class="bi-caret-right{{isChild ? '-fill' : ''}}"></i> {{ menu.getLabel() }}
+            </a>
+        {% endif %}
+
+        {% if menu.getChildren() %}
+            <ul class="children">{% partial __SELF__ ~ "::_toc_item" toc=menu.getChildren() isChild=true %}</ul>
+        {% endif %}
+    </li>
+{% endfor %}

@@ -1,0 +1,66 @@
+fields:
+    name:
+        label: 'gemfourmedia.gcontent::lang.group.fields.name'
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'gemfourmedia.gcontent::lang.group.fields.slug'
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    list_page:
+        label: 'gemfourmedia.gcontent::lang.group.fields.list_page'
+        emptyOption: 'Select Page'
+        showSearch: true
+        span: auto
+        type: dropdown
+        commentAbove: 'gemfourmedia.gcontent::lang.group.fields.list_page_comment'
+    detail_page:
+        label: 'gemfourmedia.gcontent::lang.group.fields.detail_page'
+        emptyOption: 'Select Page'
+        showSearch: true
+        span: auto
+        type: dropdown
+        commentAbove: 'gemfourmedia.gcontent::lang.group.fields.detail_page_comment'
+    images:
+        label: 'gemfourmedia.gcontent::lang.group.fields.images'
+        mode: image
+        imageWidth: '150'
+        imageHeight: '150'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+tabs:
+    fields:
+        desc:
+            label: 'gemfourmedia.gcontent::lang.group.fields.desc'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'gemfourmedia.gcontent::lang.group.fields.desc'
+        meta_title:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_title'
+            span: left
+            preset:
+                field: name
+                type: exact
+            type: text
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+        meta_description:
+            label: 'Text area'
+            size: ''
+            span: left
+            type: textarea
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+        meta_keywords:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_keywords'
+            span: left
+            type: text
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'

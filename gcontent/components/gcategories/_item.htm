@@ -1,0 +1,10 @@
+{% for category in categories %}
+<li class="{{category.active ? 'active' : ''}}">
+	<a href="{{category.url}}">{{category.name}}</a>
+	{% if category.children|length > 0 %}
+	<ul>
+		{% partial __SELF__~'::_item' categories = category.children %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}

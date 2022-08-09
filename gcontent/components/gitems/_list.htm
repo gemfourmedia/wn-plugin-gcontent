@@ -1,0 +1,15 @@
+<div class="row">
+{% for item in items %}
+	<div class="col-12 col-md-3 mb-4 mb-lg-5">
+		<div class="card h-100">
+			<img src="{{item.main_image.thumb(400,400, 'crop')}}" class="img-fluid">
+			<div class="card-body">
+				<h4 class="card-title h5">{{item.title}}</h4>
+				<div class="mb-3">{{str_limit(item.introtext|raw , 80)}}</div>
+				<a href="{{item.default_url}}" class="stretched-link">{{'gemfourmedia.gcontent::frontend.buttons.read_more'|trans}}</a>
+			</div>
+		</div>
+		
+	</div>
+{% endfor %}
+</div>

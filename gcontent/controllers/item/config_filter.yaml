@@ -1,0 +1,31 @@
+scopes:
+    serie:
+        label: In Serie
+        modelClass: GemFourMedia\GContent\Models\Serie
+        conditions: serie_id in (:filtered)
+        nameFrom: name
+    categories:
+        label: Categories
+        modelClass: GemFourMedia\GContent\Models\Category
+        scope: FilterCategories
+        nameFrom: name
+    group:
+        label: Content Group
+        modelClass: GemFourMedia\GContent\Models\Group
+        conditions: group_id in (:filtered)
+        nameFrom: name
+    published:
+        label: Only published
+        type: checkbox
+        default: 0
+        conditions: published <> false
+    featured:
+        label: Only featured
+        type: checkbox
+        default: 0
+        conditions: featured <> false
+    pinned:
+        label: Only Pinned
+        type: checkbox
+        default: 0
+        conditions: pinned <> false

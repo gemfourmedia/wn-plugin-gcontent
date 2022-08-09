@@ -1,0 +1,10 @@
+{% if nextItem or prevItem %}
+	<div class="gItem__nextprev">
+		{% if prevItem %}
+		<a href="{{prevItem.default_url}}">{{prevItem.title}}</a>
+		{% endif %}
+		{% if nextItem %}
+		<a href="{{nextItem.default_url}}">{{nextItem.title}}</a>
+		{% endif %}
+	</div>
+{% endif %}

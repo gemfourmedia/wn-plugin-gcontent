@@ -1,0 +1,139 @@
+<div class="item-social-links gItem__share gwidget">
+	<div class="gwidget__header">
+		<h4 class="gwidget__title">{{'Chia sẻ'|_}}
+		</h4>
+	</div>
+	<div class="gwidget__body">
+	{% if setting.get('social_links_type') == 'builtin' %}
+		<ul class="social-links-builtin nav">
+			<!-- Buffer -->
+			{% if 'Buffer' in setting.get('social_links') %}
+			<li class="nav-item">
+			    <a class="btn btn-default"   href="https://bufferapp.com/add?url={{item.url|default(item.default_url)|url_encode}}&amp;text={{item.title|url_encode}}" target="_blank">
+			        <i class="bi-buffer"></i> Buffer
+			    </a>
+		    </li>
+		    {% endif %}
+		    
+			{% if 'Digg' in setting.get('social_links') %}
+		    <!-- Digg -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://www.digg.com/submit?url={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+			        <i class="bi-digg"></i> Digg
+			    </a>
+			</li>
+		    {% endif %}
+		    
+			{% if 'Email' in setting.get('social_links') %}
+		    <!-- Email -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="mailto:?Subject={{item.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{item.url|default(item.default_url)|url_encode}}">
+			        <i class="bi-envelope"></i> Email
+			    </a>
+		 	</li>
+		    {% endif %}
+		    
+			{% if 'Facebook' in setting.get('social_links') %}
+		    <!-- Facebook -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://www.facebook.com/sharer.php?u={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+			        <i class="bi-facebook"></i> Facebook
+			    </a>
+			</li>
+		    {% endif %}
+		    
+			{% if 'Google' in setting.get('social_links') %}
+		    <!-- Google+ -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="https://plus.google.com/share?url={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+			        <i class="bi-google"></i> Google+
+			    </a>
+			</li>
+		    {% endif %}
+		    
+			{% if 'LinkedIn' in setting.get('social_links') %}
+		    <!-- LinkedIn -->
+		    <li class="nav-item">
+		    	<a class="btn btn-default"   href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+		        	<i class="bi-linkedin"></i> LinkedIn
+		    	</a>
+			</li>
+		    {% endif %}
+		    
+			{% if 'Pinterest' in setting.get('social_links') %}
+		    <!-- Pinterest -->
+		    <li class="nav-item">
+		    	<a class="btn btn-default"   href="https://pinterest.com/pin/create/button/?url={{item.url|default(item.default_url)|url_encode}}&amp;description={{item.title|url_encode}}">
+		        	<i class="bi-pinterest"></i> Pinterest
+		    	</a>
+		    </li>
+		    {% endif %}
+		    
+			{% if 'Print' in setting.get('social_links') %}
+		    <!-- Print -->
+			<li class="nav-item">
+			    <a class="btn btn-default"   href="javascript:;" onclick="window.print()">
+			        <i class="bi-printer"></i> Print
+			    </a>
+			</li>
+		    {% endif %}
+		    
+			{% if 'Reddit' in setting.get('social_links') %}
+		    <!-- Reddit -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://reddit.com/submit?url={{item.url|default(item.default_url)|url_encode}}&amp;title={{item.title|url_encode}}" target="_blank">
+			        <i class="bi-reddit"></i> Reddit
+			    </a>
+		    </li>
+		    {% endif %}
+
+			{% if 'StumbleUpon' in setting.get('social_links') %}
+		    <!-- StumbleUpon-->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://www.stumbleupon.com/submit?url={{item.url|default(item.default_url)|url_encode}}m&amp;title={{item.title|url_encode}}" target="_blank">
+			        <i class="bi-stumbleUpon"></i> StumbleUpon
+			    </a>
+		    </li>
+		    {% endif %}
+		    
+			{% if 'Tumblr' in setting.get('social_links') %}
+		    <!-- Tumblr-->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://www.tumblr.com/share/link?url={{item.url|default(item.default_url)|url_encode}}&amp;title={{item.title|url_encode}}" target="_blank">
+			        <i class="bi-tumblr"></i> Tumblr
+			    </a>
+		    </li>
+		    {% endif %}
+		     
+			{% if 'Twitter' in setting.get('social_links') %}
+		    <!-- Twitter -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="https://twitter.com/share?url={{item.url|default(item.default_url)|url_encode}}&amp;text={{item.title|url_encode}}&amp;hashtags={{item.slug}}" target="_blank">
+			        <i class="bi-twitter"></i> Twitter
+			    </a>
+		    </li>
+		    {% endif %}
+		    
+			{% if 'VK' in setting.get('social_links') %}
+		    <!-- VK -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://vkontakte.ru/share.php?url={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+			        <i class="bi-vk"></i> VK
+			    </a>
+		    </li>
+		    {% endif %}
+		    
+			{% if 'Yumly' in setting.get('social_links') %}
+		    <!-- Yummly -->
+		    <li class="nav-item">
+			    <a class="btn btn-default"   href="http://www.yummly.com/urb/verify?url={{item.url|default(item.default_url)|url_encode}}&amp;title={{item.title|url_encode}}" target="_blank">
+			        <i class="bi-yumly"></i> Yumly
+			    </a>
+		    </li>
+		    {% endif %}
+		</ul>
+	{% else %}
+		{{setting.get('social_links_external')|raw}}
+	{% endif %}
+	</div>
+</div>

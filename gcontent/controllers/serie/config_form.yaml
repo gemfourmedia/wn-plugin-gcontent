@@ -1,0 +1,10 @@
+name: Serie
+form: $/gemfourmedia/gcontent/models/serie/fields.yaml
+modelClass: GemFourMedia\GContent\Models\Serie
+defaultRedirect: gemfourmedia/gcontent/serie
+create:
+    redirect: 'gemfourmedia/gcontent/serie/update/:id'
+    redirectClose: gemfourmedia/gcontent/serie
+update:
+    redirect: gemfourmedia/gcontent/serie
+    redirectClose: gemfourmedia/gcontent/serie

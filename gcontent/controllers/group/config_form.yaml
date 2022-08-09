@@ -1,0 +1,10 @@
+name: Group
+form: $/gemfourmedia/gcontent/models/group/fields.yaml
+modelClass: GemFourMedia\GContent\Models\Group
+defaultRedirect: gemfourmedia/gcontent/group
+create:
+    redirect: 'gemfourmedia/gcontent/group/update/:id'
+    redirectClose: gemfourmedia/gcontent/group
+update:
+    redirect: gemfourmedia/gcontent/group
+    redirectClose: gemfourmedia/gcontent/group

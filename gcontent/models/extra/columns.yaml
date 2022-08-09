@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    code:
+        label: code
+        type: text
+        searchable: true
+        sortable: true
+    title:
+        label: 'gemfourmedia.gcontent::lang.components.gCategories.props.title'
+        type: text
+        searchable: true
+        sortable: true
+    sort_order:
+        label: 'gemfourmedia.gcontent::lang.item.fields.sort_order'
+        type: number
+        sortable: true

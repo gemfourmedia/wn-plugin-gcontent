@@ -1,0 +1,56 @@
+fields:
+    featured:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.featured'
+        span: full
+        type: switch
+    name:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.name'
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.slug'
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    images:
+        label: 'gemfourmedia.gcontent::lang.serie.fields.images'
+        mode: image
+        imageWidth: '150'
+        imageHeight: '150'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+tabs:
+    fields:
+        desc:
+            label: 'gemfourmedia.gcontent::lang.serie.fields.desc'
+            size: 'large'
+            span: full
+            type: richeditor
+            tab: 'gemfourmedia.gcontent::lang.serie.fields.desc'
+        meta_title:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_title'
+            span: auto
+            preset:
+                field: name
+                type: exact
+            type: text
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+        meta_description:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_description'
+            size: ''
+            span: left
+            type: textarea
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
+        meta_keywords:
+            label: 'gemfourmedia.gcontent::lang.seo.meta_keywords'
+            span: left
+            type: text
+            tab: 'gemfourmedia.gcontent::lang.seo.tab'
