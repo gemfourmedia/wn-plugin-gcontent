@@ -63,19 +63,36 @@ class Plugin extends PluginBase
 
     public function registerSearchHandlers()
     {
-        
-        return [
+        $contentGroups = \GemFourMedia\GContent\Models\Group::get();
+        $searchHandlers = [];
 
-            'gContentItemSearch' => [
-                'name' => 'Content Search',
+        foreach ($contentGroups as $group) {
+            $searchHandlers['gContent-'.$group->slug]  = [
+                'name' => $group->name,
                 'model' => \GemFourMedia\GContent\Models\Item::class,
-                'record' => [
-                    'title' => 'title',
-                    'image' => 'main_image',
-                    'description' => 'introtext',
-                    'url' => 'default_url',
-                ]
-            ]
+                'record' => function ($model, $query) use ($group) {
+                    if (!$model->published) return false;
+                    return [
+                        'title' => $model->title,
+                        'image' => $model->main_image_url,
+                        'description' => strip_tags($model->introtext),
+                        'url' => $model->default_url,
+                    ];
+                }
+            ];
+        }
+
+        $searchHandlers['gContentSeries'] = [
+            'name' => 'Series',
+            'model' => \GemFourMedia\GContent\Models\Serie::class,
+            'record' => [
+                'title' => 'name',
+                'image' => 'main_image',
+                'description' => 'introtext',
+                'url' => 'default_url',
+            ],
         ];
+
+        return $searchHandlers;
     }
 }
