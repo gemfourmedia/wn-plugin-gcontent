@@ -183,7 +183,7 @@ class Item extends Model
         'group' => ['GemFourMedia\GContent\Models\Group', 'default'=>['name'=>'Default Group', 'slug'=>'default-group']],
         'category' => ['GemFourMedia\GContent\Models\Category', 'default'=>['name'=>'Uncategories', 'slug'=>'uncategories']],
         'serie' => ['GemFourMedia\GContent\Models\Serie'],
-        'author' => ['Winter\User\Models\User', 'key' => 'user_id'],
+        // 'author' => ['Winter\User\Models\User', 'key' => 'user_id'],
     ];
 
     /*

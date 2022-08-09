@@ -53,12 +53,6 @@ columns:
         select: name
         relation: serie
         sortable: true
-    user_id:
-        label: gemfourmedia.gcontent::lang.item.fields.user_id
-        type: text
-        select: name
-        relation: author
-        sortable: true
     published_at:
         label: gemfourmedia.gcontent::lang.item.fields.published_at
         type: timetense

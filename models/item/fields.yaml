@@ -160,11 +160,3 @@ secondaryTabs:
                 - group
                 - category
             tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
-        author:
-            label: 'gemfourmedia.gcontent::lang.item.fields.user_id'
-            nameFrom: name
-            descriptionFrom: description
-            emptyOption: None
-            span: full
-            type: relation
-            tab: 'gemfourmedia.gcontent::lang.item.tabs.publishing'
