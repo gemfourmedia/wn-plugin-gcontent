@@ -27,6 +27,7 @@ class Serie extends Model
     
     public $implement = [
         '@Winter.Translate.Behaviors.TranslatableModel',
+        '@Winter\Search\Behaviors\Searchable',
     ];
 
     /**
@@ -56,6 +57,16 @@ class Serie extends Model
         'meta_description',
         'meta_keywords',
         ['slug', 'index' => true]
+    ];
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public $searchable = [
+        'name',
+        'desc',
     ];
 
     /**
@@ -148,6 +159,11 @@ class Serie extends Model
     public function getDefaultUrlAttribute()
     {
         return $this->setUrl();
+    }
+
+    public function getIntrotextAttribute()
+    {
+        return \Str::limit(strip_tags($this->desc), 252);
     }
 
     /*
