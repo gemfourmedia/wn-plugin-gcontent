@@ -1,6 +1,7 @@
 <?php namespace GemFourMedia\GContent\Components;
 
 use Lang;
+use Redirect;
 use GemFourMedia\GContent\Classes\ComponentAbstract;
 
 use GemFourMedia\GContent\Models\Item;

@@ -1,6 +1,7 @@
 <?php namespace GemFourMedia\GContent\Components;
 
 use Lang;
+use Redirect;
 use GemFourMedia\GContent\Classes\ComponentAbstract;
 
 use GemFourMedia\GContent\Models\Item;
@@ -88,28 +89,28 @@ class GShowCase extends ComponentAbstract
             'categoryFilter' => [
                 'title'       => 'gemfourmedia.gcontent::lang.components.gItems.props.categoryFilter',
                 'description' => 'gemfourmedia.gcontent::lang.components.gItems.props.categoryFilter_desc',
-                'default'     => '{{:category}}',
+                'default'     => null,
                 'type'        => 'dropdown',
                 'group'       => 'gemfourmedia.gcontent::lang.components.gItems.props.group_filter',
             ],
             'authorFilter' => [
                 'title'       => 'gemfourmedia.gcontent::lang.components.gItems.props.authorFilter',
                 'description' => 'gemfourmedia.gcontent::lang.components.gItems.props.authorFilter_desc',
-                'default'     => '{{:author}}',
+                'default'     => null,
                 'type'        => 'dropdown',
                 'group'       => 'gemfourmedia.gcontent::lang.components.gItems.props.group_filter',
             ],
             'serieFilter' => [
                 'title'       => 'gemfourmedia.gcontent::lang.components.gItems.props.serieFilter',
                 'description' => 'gemfourmedia.gcontent::lang.components.gItems.props.serieFilter_desc',
-                'default'     => '{{:serie}}',
+                'default'     => null,
                 'type'        => 'dropdown',
                 'group'       => 'gemfourmedia.gcontent::lang.components.gItems.props.group_filter',
             ],
             'tagFilter' => [
                 'title'       => 'gemfourmedia.gcontent::lang.components.gItems.props.tagFilter',
                 'description' => 'gemfourmedia.gcontent::lang.components.gItems.props.tagFilter_desc',
-                'default'     => '{{:tag}}',
+                'default'     => null,
                 'type'        => 'string',
                 'group'       => 'gemfourmedia.gcontent::lang.components.gItems.props.group_filter',
             ],
@@ -222,13 +223,13 @@ class GShowCase extends ComponentAbstract
         /*
          * If the page number is not valid, redirect
          */
-        if ($pageNumberParam = $this->paramName('pageNumber')) {
-            $currentPage = $this->property('pageNumber');
+        // if ($pageNumberParam = $this->paramName('pageNumber')) {
+        //     $currentPage = $this->property('pageNumber');
 
-            if ($currentPage > ($lastPage = $this->items->lastPage()) && $currentPage > 1) {
-                return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
-            }
-        }
+        //     if ($currentPage > ($lastPage = $this->items->lastPage()) && $currentPage > 1) {
+        //         return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
+        //     }
+        // }
     }
 
     public function onRender()
