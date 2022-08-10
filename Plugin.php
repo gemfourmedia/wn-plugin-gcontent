@@ -5,6 +5,8 @@ use System\Classes\PluginBase;
 
 use GemFourMedia\GContent\Classes\GContentPageExtend;
 use GemFourMedia\GContent\Classes\GContentUserExtend;
+use GemFourMedia\GContent\Classes\GContentPermissions;
+use GemFourMedia\GContent\Classes\GContentNavigations;
 
 class Plugin extends PluginBase
 {
@@ -94,5 +96,15 @@ class Plugin extends PluginBase
         ];
 
         return $searchHandlers;
+    }
+
+    public function registerPermissions()
+    {
+        return (new GContentPermissions)->register();
+    }
+    
+    public function registerNavigation()
+    {
+        return (new GContentNavigations)->register();
     }
 }
