@@ -11,7 +11,9 @@ use System\Classes\PluginManager;
 use Event;
 
 /**
- * Class GContentAuthorExtend
+ * Class GContentPageExtend
+ * Extend for Winter.Pages
+ * 
  * @package GemFourMedia\GContent\Classes
  */
 class GContentPageExtend

@@ -12,7 +12,7 @@ use GemFourMedia\GContent\Models\Setting;
 class Serie extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
-    use \GemFourMedia\GCompany\Traits\SEOHelper;
+    use \GemFourMedia\GContent\Traits\SEOHelper;
     
     /**
      * @var string name of field use for og:image.
@@ -27,6 +27,7 @@ class Serie extends Model
     
     public $implement = [
         '@Winter.Translate.Behaviors.TranslatableModel',
+        '@Winter\Search\Behaviors\Searchable',
     ];
 
     /**
@@ -56,6 +57,16 @@ class Serie extends Model
         'meta_description',
         'meta_keywords',
         ['slug', 'index' => true]
+    ];
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public $searchable = [
+        'name',
+        'desc',
     ];
 
     /**
@@ -148,6 +159,11 @@ class Serie extends Model
     public function getDefaultUrlAttribute()
     {
         return $this->setUrl();
+    }
+
+    public function getIntrotextAttribute()
+    {
+        return \Str::limit(strip_tags($this->desc), 252);
     }
 
     /*

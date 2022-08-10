@@ -16,7 +16,7 @@ class Category extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
     use \Winter\Storm\Database\Traits\NestedTree;
-    use \GemFourMedia\GCompany\Traits\SEOHelper;
+    use \GemFourMedia\GContent\Traits\SEOHelper;
 
     /**
      * @var string name of field use for og:image.
