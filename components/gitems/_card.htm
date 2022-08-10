@@ -1,0 +1,29 @@
+<article class="card group bg-white shadow-lg rounded relative overflow-hidden pb-2 lg:pb-4 hover:cursor-pointer" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="overflow-hidden relative">
+        <img src="{{image|resize(imageWidth, imageHeight, {mode:'crop'})}}" width="{{imageWidth}}" height="{{imageHeight}}"  itemprop="image" alt="{{title}}" loading="lazy" class="w-full duration-700 group-hover:scale-110">
+        {% if category and category.name != 'uncategories' %}
+        <a href="{{category.url|default('#')}}" title="{{category.name}}" class="uppercase text-white text-xs absolute z-10 left-0 bottom-3 pl-3 py-1 pr-2 bg-black">{{category.name}}</a>
+        {% endif %}
+    </header>
+    <div class="w-full p-4 pb-0 lg:p-8 lg:pb-0">
+        <h6 itemprop="name" class="text-lg md:text-xl font-medium lg:h-7 truncate">{{title}}</h6>
+        {% if published_at or author %}
+        <p class=" text-gray-600 mt-1">
+            {% if author %}
+            <span itemprop="author" class="font-medium">{{author}}</span>
+            {% endif %}
+            {% if published_at %}
+            &nbsp;/&nbsp;<time datetime="{{published_at|date('Y-m-d')}}" itemprop="datePublished">
+            {{published_at|date('F j Y')}}
+            </time>
+            {% endif %}
+        </p>
+        {% endif %}
+    </div>
+    <div class="card-content text-gray-600 p-4 lg:p-8 lg:pb-0 pb-0 mb-2 lg:mb-4" itemprop="articleBody">
+        {{content|raw}}
+    </div>
+    <div class="card-footer p-2 lg:p-4">
+        <a href="{{url}}" title="{{title}}" class="uppercase text-primary px-2 lg:px-4 font-medium inline-block group-hover:underline underline-offset-2 group-hover:text-primary stretched-link" itemprop="url">Read more</a>
+    </div>
+</article>

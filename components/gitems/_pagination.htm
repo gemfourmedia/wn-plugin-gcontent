@@ -1,0 +1,68 @@
+{% if items.lastPage() > 1 %}
+<nav aria-label="Page navigation" class="main-container mt-6">
+    <ul class="inline-flex items-center -space-x-px">
+        <li>
+            <a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg  {{items.currentPage() <= 1 ? 'disabled' : ''}}" href="{{ this.page.baseFileName|page({ (pageParam): 1 }) }}">{{'First'|_}}</a>
+        </li>
+        {% if items.currentPage() > 1 %}
+        <li class="{{items.currentPage() <= 1 ? 'disabled' : ''}}">
+            <a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg " aria-label="Previous" href="{{ this.page.baseFileName|page({ (pageParam): (items.currentPage()-1) }) }}">
+                <span class="sr-only">Previous</span>
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+        </li>
+        {% endif %}
+
+        {% if items.currentPage() > 3 %}
+        <li>
+            <a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg {{ items.currentPage() == page ? 'text-secondary' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): 1 }) }}">1</a>
+        </li>
+        {% endif %}
+
+        {% if items.currentPage() > 4 %}
+        <li>
+            <span class="block py-2 px-3 leading-tight bg-white border text-lg">...</span>
+        </li>
+        {% endif %}
+
+        {% for page in 1..items.lastPage() %}
+            {% if page >= (items.currentPage() -2) and page <= (items.currentPage() + 2) %}
+                {% if page == items.currentPage() %}
+                    <li>
+                        <span class="block py-2 px-3 leading-tight bg-white border text-secondary text-lg">{{page}}</span>
+                    </li>
+                {% else %}
+                    <li>
+                        <a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg " href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                    </li>
+                {% endif %}
+            {% endif %}
+
+        {% endfor %}
+
+        {% if items.currentPage() < (items.lastPage() - 3) %}
+        <li>
+            <span class="block py-2 px-3 leading-tight bg-white border ">...</span>
+        </li>
+        {% endif %}
+
+        {% if items.currentPage() < (items.lastPage() - 2) %}
+        <li class="{{ items.currentPage() == page ? 'active' : null }}">
+            <a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg " href="{{ this.page.baseFileName|page({ (pageParam): items.lastPage() }) }}">{{items.lastPage()}}</a>
+        </li>
+        {% endif %}
+
+        {% if items.lastPage() > items.currentPage() %}
+        <li class="{{items.currentPage() >= items.lastPage() ? 'disabled' : ''}}">
+            <a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg " aria-label="Next" href="{{ this.page.baseFileName|page({ (pageParam): (items.currentPage()+1) }) }}">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+            <span class="sr-only">Next</span>
+            </a>
+        </li>
+        {% endif %}
+        <li><a class="block py-2 px-3 leading-tight bg-white border hover:text-secondary text-lg " href="{{ this.page.baseFileName|page({ (pageParam): items.lastPage() }) }}">{{'Last'|_}}</a></li>
+    </ul>
+</nav>
+{% endif %}
