@@ -2,6 +2,7 @@
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
+use GemFourMedia\GContent\Models\Group;
 
 class BuilderTableCreateGemfourmediaGcontentGroup extends Migration
 {
@@ -22,6 +23,12 @@ class BuilderTableCreateGemfourmediaGcontentGroup extends Migration
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
+        // Create default group
+        Group::create([
+            'name' => 'Posts',
+            'slug' => 'posts',
+            'meta_title' => 'Posts'
+        ]);
     }
     
     public function down()
