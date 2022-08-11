@@ -1,9 +1,0 @@
-{% if item %}
-	<div class="gItem__single card position-relative">
-		<img src="{{item.main_image.thumb(400,400, {mode:'crop'})}}" class="w-100">
-		<div class="card-body">
-			<h4 class="card-title">{{item.title}}</h4>
-			<a href="{{item.default_url}}" class="stretched-link"></a>
-		</div>
-	</div>
-{% endif %}

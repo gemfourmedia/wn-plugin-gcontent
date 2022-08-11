@@ -1,0 +1,12 @@
+{% if embeds|length > 0 %}
+<hr class="my-4"/>
+<h3 class="sidebar-title">Video</h3>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {% for video in embeds %}
+    <li>
+        <h5>{{video.title}}</h5>
+        {{video.code|raw}}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

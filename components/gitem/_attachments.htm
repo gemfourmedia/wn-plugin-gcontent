@@ -1,0 +1,19 @@
+{% if attachments|length > 0 %}
+<hr class="my-4"/>
+<h3 class="sidebar-title">Attachments</h3>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {% for file in attachments %}
+    <li>
+        <a href="{{file.getPath()}}" target="_blank"  class="border rounded flex p-2 items-center text-gray-800 hover:text-primary hover:border-primary">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                <path d="M25.3333 12H20V4H12V12H6.66665L16 22.6667L25.3333 12ZM5.33331 25.3333H26.6666V28H5.33331V25.3333Z" fill="fillCurrent" class="fill-current"/>
+            </svg>            
+            <div>
+                <span class="block font-medium">{{file.title|default(file.file_name)}}</span>
+                <span class="text-sm text-gray-600">{{file.file_size/1000}} kB</span>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

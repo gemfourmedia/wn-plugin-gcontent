@@ -1,19 +1,17 @@
 {% if toc %}
-<div class="gItem__toc gwidget">
-	<div class="gwidget__header">
-		<h4 class="gwidget__title">
-			{{'Mục lục'|_}}
+<div class="card border rounded bg-white mb-4 float-none lg:float-right lg:max-w-sm">
+	<div class="flex justify-between p-3 bg-gray-300">
+		<h4 class="mb-0">
+			Table Of Content
 		</h4>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#item_toc_collapse" aria-controls="item_toc_collapse" aria-expanded="true" aria-label="Toggle navigation">
-		    <span class="bi-list"></span>
+		<button class="navbar-toggler" type="button">
+		    <svg class="w-6 h-6" aria-hidden="true" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
 		</button>
 	</div>
-	<div class="gwidget__body">
-		<div class="collapse navbar-collapse show" id="item_toc_collapse">
-			<ul>
-				{% partial _SELF__~'::_toc_item' toc=toc isChild=false %}
-			</ul>
-		</div>
-	</div>
+    <div class="p-3" id="item_toc_collapse">
+        <ul class="space-y-2 list-inside list-decimal">
+            {% partial _SELF__~'::_toc_item' toc=toc isChild=false %}
+        </ul>
+    </div>
 </div>
 {% endif %}

@@ -1,13 +1,13 @@
 {% for menu in toc %}
     <li role="presentation">
         {% if menu.getUri() %}
-            <a href="{{ menu.getUri() }}">
+            <a href="{{ menu.getUri() }}" class="py-1 hover:underline">
                 <i class="bi-caret-right{{isChild ? '-fill' : ''}}"></i> {{ menu.getLabel() }}
             </a>
         {% endif %}
 
         {% if menu.getChildren() %}
-            <ul class="children">{% partial __SELF__ ~ "::_toc_item" toc=menu.getChildren() isChild=true %}</ul>
+            <ul class="children ml-4 mt-2 list-inside list-disc">{% partial __SELF__ ~ "::_toc_item" toc=menu.getChildren() isChild=true %}</ul>
         {% endif %}
     </li>
 {% endfor %}

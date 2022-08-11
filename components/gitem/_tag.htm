@@ -1,14 +1,9 @@
 {% if tags|length > 0 %}
-<div class="gItem__tags gwidget">
-	<div class="gwidget__header">
-		<h4 class="gwidget__title">
-			{{'Chủ đề'|_}}
-		</h4>
-	</div>
-	<div class="gwidget__body">
-		{% for tag in tags %}
-		<a href="{{tag.url}}" class="tag-item"><i class="bi-tag"></i> {{tag.name}}</a>
+<ul class="flex mb-4 space-x-3">
+    {% for tag in tags %}
+    <li>
+		<a href="{{tag.url}}" title="{{tag.name}}" class="text-blue-400 text-sm lowercase">#<span class="underline">{{tag.name}}</span></a>
+    </li>
 	{% endfor %}
-	</div>
-</div>
+</ul>
 {% endif %}

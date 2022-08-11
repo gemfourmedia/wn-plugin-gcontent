@@ -1,13 +1,13 @@
-{% if gallery %}
-<div class="gItem__gallery">
-	<div class="row">
-		{% for image in gallery %}
-		<div class="col-6 col-md-3">
-			<a data-fancybox="gallery" href="{{image.getPath()}}" title="{{image.title}}">
-				<img src="{{image.thumb(400,400)}}" class="img-fluid">
-			</a>
-		</div>
-		{% endfor %}
-	</div>
-</div>
+{% if gallery|length > 0 %}
+<hr class="my-4"/>
+<h3 class="sidebar-title">Gallery</h3>
+<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1">
+    {% for image in gallery %}
+    <li>
+        <a data-fancybox="gallery" href="{{image.getPath()}}" title="{{image.title}}">
+            <img src="{{image.thumb(400, 300, {mode: 'crop'})}}" loading="lazy" width="400" height="300" class="w-full">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
 {% endif %}

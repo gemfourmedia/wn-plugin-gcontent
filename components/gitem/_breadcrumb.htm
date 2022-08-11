@@ -1,0 +1,58 @@
+<nav class="md:block py-1" aria-label="Breadcrumb">
+    <ol class="inline-flex space-x-1">
+        <li class="inline-flex items-center">
+            <a href="{{url('/')}}" class="inline-flex items-center text-xs sm:text-sm ">
+                Home
+            </a>
+        </li>
+        <li class="inline-flex items-center">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8945 4.5795C11.2695 4.75425 11.4495 5.16225 11.2972 5.49075L7.41298 13.818C7.25998 14.1465 6.83173 14.271 6.45598 14.0955C6.08098 13.9207 5.90098 13.512 6.05398 13.1835L9.93748 4.857C10.0905 4.5285 10.5187 4.404 10.8945 4.5795Z" fill="fillCurrent" class="fill-current"/>
+            </svg> 
+            {% if title %}              
+            <a href="{{'posts'|page({})}}" class="text-xs sm:text-sm" title="Posts">Posts</a>
+            {% else %}
+            <span class="text-xs sm:text-sm">Posts</span>
+            {% endif %}
+        </li>
+        {% if title %}
+        <li class="hidden sm:flex items-center" aria-current="page">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8945 4.5795C11.2695 4.75425 11.4495 5.16225 11.2972 5.49075L7.41298 13.818C7.25998 14.1465 6.83173 14.271 6.45598 14.0955C6.08098 13.9207 5.90098 13.512 6.05398 13.1835L9.93748 4.857C10.0905 4.5285 10.5187 4.404 10.8945 4.5795Z" fill="fillCurrent" class="fill-current"/>
+            </svg>                 
+            <span class="text-xs sm:text-sm ">{{title}}</span>
+        </li>
+        {% endif%}
+    </ol>
+</nav>
+
+{% put scripts %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "home",
+                "item": "{{url('/')}}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Science Fiction",
+                "item": "{{'posts'|page({})}}"
+            }
+            {% if title %}
+            ,
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{title}}"
+            }
+            {% endif %}
+        ]
+    }
+</script>
+{% endput %}
