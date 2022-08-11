@@ -1,5 +1,5 @@
 {
-    "name": "gemfourmedia/wn-gcontent-plugin",
+    "name": "gemfourmedia/wn-plugin-gcontent",
     "type": "winter-plugin",
     "description": "Content management for Winter CMS",
     "homepage": "https://github.com/gemfourmedia/wn-plugin-gcontent",

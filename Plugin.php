@@ -30,7 +30,7 @@ class Plugin extends PluginBase
             'description' => 'gemfourmedia.gcontent::lang.plugin.description',
             'author' => 'GemFourMedia',
             'icon' => 'oc-icon-adjust',
-            'homepage' => 'https://wintercms.gemfourmedia.com/plugin/gcontent',
+            'homepage' => 'https://gemfourmedia.com/wintercms/plugin-gcontent',
         ];
     }
 
