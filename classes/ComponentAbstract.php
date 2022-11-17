@@ -157,8 +157,14 @@ abstract class ComponentAbstract extends ComponentBase
     public function loadItems()
     {
         if (!$options = $this->getListingSetting()) return;
+        
 
-        $items = Item::with(['category', 'group', 'serie', 'author', 'images'])->listFrontEnd($options);
+        $withs = ['category', 'group', 'serie', 'images'];
+        if (class_exists('\Winter\User\Models\User')) {
+            array_push($withs, 'author');
+        }
+
+        $items = Item::with($withs)->listFrontEnd($options);
 
         if (!$items) return;
 

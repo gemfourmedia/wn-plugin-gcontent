@@ -1,0 +1,70 @@
+<ul class="flex flex-wrap gap-2">
+    <!-- Print -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Print {{item.title}}"  href="javascript:;" onclick="window.print()">
+            <span class="sr-only">Print</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/print' %}
+            </div>
+        </a>
+    </li>
+
+    <!-- Email -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Share {{item.title}} via email"  href="mailto:?Subject={{item.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{item.url|default(item.default_url)|url_encode}}">
+            <span class="sr-only">Email</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/envelop' %}
+            </div>
+        </a>
+     </li>
+
+    <!-- Facebook -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Share {{item.title}} via Facebook"  href="http://www.facebook.com/sharer.php?u={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+            <span class="sr-only">Facebook</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/facebook' %}
+            </div>
+        </a>
+    </li>
+
+    <!-- Google+ -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Share {{item.title}} via Google+"  href="https://plus.google.com/share?url={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+            <span class="sr-only">Google+</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/google-plus' %}
+            </div>
+        </a>
+    </li>
+
+    <!-- LinkedIn -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Share {{item.title}} via LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{item.url|default(item.default_url)|url_encode}}" target="_blank">
+            <span class="sr-only">LinkedIn</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/linkedin' %}
+            </div>
+        </a>
+    </li>
+
+    <!-- Pinterest -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Share {{item.title}} via Pinterest"  href="https://pinterest.com/pin/create/button/?url={{item.url|default(item.default_url)|url_encode}}&amp;description={{item.title|url_encode}}">
+            <span class="sr-only">Pinterest</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/pinterest' %}
+            </div>
+        </a>
+    </li>
+    <!-- Twitter -->
+    <li class="nav-item">
+        <a class="btn btn-default" title="Share {{item.title}} via Twitter"  href="https://twitter.com/share?url={{item.url|default(item.default_url)|url_encode}}&amp;text={{item.title|url_encode}}&amp;hashtags={{item.slug}}" target="_blank">
+            <span class="sr-only">Twitter</span>
+            <div class="w-8 h-8 p-1 flex items-center justify-center rounded-full border border-gray-700 text-gray-700">
+                {% partial 'icons/twitter' %}
+            </div>
+        </a>
+    </li>
+</ul>

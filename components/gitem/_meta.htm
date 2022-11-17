@@ -1,11 +1,15 @@
-<div class="gItem__meta">
-	{% if item.categories|length > 0 %}
-		<ul>
-			{% for category in item.categories %}
-			<li>
-				<a href="{{category.default_url}}">{{category.name}}</a>
-			</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
-</div>
+<ul class="card-meta text-gray-600 flex mb-2 text-xs sm:text-sm">
+    <li>
+        <time datetime="{{published_at|date('Y-m-d')}}" itemprop="datePublished">{{published_at|date('F j Y')}}</time>
+    </li>
+    {% if item.author %}
+    <li>
+        &nbsp;/&nbsp;<span class="font-medium">{{item.author.name}}</span>
+    </li>
+    {% endif %}
+    {% if item.category %}
+    <li>
+        &nbsp;/&nbsp;<span class="font-medium">{{item.category.name}}</span>
+    </li>
+    {% endif %}
+</ul>

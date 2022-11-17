@@ -1,8 +1,8 @@
 {
-    "name": "gemfourmedia/wn-gcontent-plugin",
+    "name": "gemfourmedia/wn-plugin-gcontent",
     "type": "winter-plugin",
     "description": "Content management for Winter CMS",
-    "homepage": "https://github.com/gemfourmedia/wn-gcontent-plugin",
+    "homepage": "https://github.com/gemfourmedia/wn-plugin-gcontent",
     "keywords": ["winter cms", "winter", "plugin", "content", "post"],
     "license": "MIT",
     "authors": [
@@ -13,11 +13,11 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/gemfourmedia/wn-gcontent-plugin/issues",
-        "source": "https://github.com/gemfourmedia/wn-gcontent-plugin"
+        "issues": "https://github.com/gemfourmedia/wn-plugin-gcontent/issues",
+        "source": "https://github.com/gemfourmedia/wn-plugin-gcontent"
     },
     "require": {
-        "php": "^8.0",
+        "php": "^7.2|^8.0",
         "composer/installers": "~1.0",
         "caseyamcl/toc": "^3.1"
     },

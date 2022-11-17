@@ -7,15 +7,20 @@ use GemFourMedia\GContent\Classes\GContentPageExtend;
 use GemFourMedia\GContent\Classes\GContentUserExtend;
 use GemFourMedia\GContent\Classes\GContentPermissions;
 use GemFourMedia\GContent\Classes\GContentNavigations;
+use GemFourMedia\GContent\Classes\GContentSearchResultsProvider;
 
 class Plugin extends PluginBase
 {
 
-    // public $require = ['Winter.User'];
-
     public function boot()
     {
+        // Extend Winter.User
         (new GContentUserExtend)->extend();
+
+        // Support OFFLINE.Search plugin
+        Event::listen('offline.sitesearch.extend', function () {
+            return new GContentSearchResultsProvider();
+        });
     }
 
     public function pluginDetails()
@@ -25,14 +30,13 @@ class Plugin extends PluginBase
             'description' => 'gemfourmedia.gcontent::lang.plugin.description',
             'author' => 'GemFourMedia',
             'icon' => 'oc-icon-adjust',
-            'homepage' => 'https://wintercms.gemfourmedia.com/plugin/gcontent',
+            'homepage' => 'https://gemfourmedia.com/wintercms/plugin-gcontent',
         ];
     }
 
     public function register()
     {
         (new GContentPageExtend)->extend();
-        
     }
 
     public function registerComponents()
